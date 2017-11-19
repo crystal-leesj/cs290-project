@@ -10,7 +10,7 @@ app.use(session({secret:'SuperSecretPassword'}));
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 3000);
+app.set('port', 42185);
 app.use(express.static(__dirname + '/img'));
 
 app.get('/',function(req,res){
