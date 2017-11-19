@@ -1,0 +1,32 @@
+<h2>List of customers</h2>
+
+{{#if customers}}
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Party Size</th>
+        <th>Phone number</th>
+        <th>Ready to serve</th>
+      </tr>
+    </thead>
+    <tbody>
+        {{#each customers}}
+        <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.party}}</td>
+            <td>{{this.number}}</td>
+            <td>
+                <form method="post" action="done">
+                    <input type="hidden" name="id" value="{{this.id}}">
+                    <input type="submit" class="btn btn-warning" name="Done" value="Mark as Done">
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{/if}}
+
+<a href="/new" class="btn btn-success" role="button">Add another customer</a>
+<a href="/" class="btn btn-primary" role="button">Go back to the main page</a>
